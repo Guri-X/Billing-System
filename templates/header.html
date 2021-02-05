@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style> 
+        .navbar-nav { 
+            margin-left: auto; 
+        } 
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-light navbar-expand-sm" style="background-color: #b5650e;">
+  <div class="container-fluid">
+	  <!-- <img src="/assets/img/15-155034_professional-billing-and-invoicing-accounting-icon-png-white.png" alt="" width="30" height="24"> -->
+	  <a class="navbar-brand" href="{% url 'Home' %}">Online Billing System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+		<a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+		<a class="nav-link active" aria-current="page" href="{% url 'About' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<nav class="navbar fixed-bottom navbar-light navbar-expand-sm" style="background-color: #b5650e;">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page">Copyright © 2021 - All Rights Reserved - Online Billing System</a>
+	</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body>
+</html>
+
+{% block content %}
+{% endblock content %}
