@@ -1,21 +1,29 @@
-{% extends 'header.html' %}
+{% extends 'heading.html' %}
+{% load static %}
 
 {% block content %}
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="/home/xan0er/Django/templates/assets/css/index.css" rel="stylesheet">	
-    <title>Online Billing System</title>
-  </head>
-  <body>
-  <div class=="container">
-    <h1>About</h1>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>  
-  </body>
-</html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">	
+	<title>
+			About | Online Billing System
+    </title>
+</head>
+<body>
+    <div class="Banner">
+		<u><h1>About</h1></u><br>
+		<h6>The "Online Billing System" has been developed to override the problems prevailing in
+		    the practicing manual system. This software is supported to eliminate and in some
+		    cases reduce the hardships faced by this existing system. Moreover this system is
+		    designed for the particular need of the company to carry out operations in a smooth and
+			effective manner.<br>
+		    The application is reduced as much as possible to avoid errors while entering the data.
+		    It also provides error message while entering invalid data. No formal knowledge is
+		    needed for the user to use this system. Thus by this all it proves it is user-friendly.
+		    Online Billing System , as described above, can lead to error free, secure, reliable and
+		    fast management system. It can assist the user to concentrate on their other activities
+		    rather to concentrate on the record keeping. Thus it will help organization in better
+		    utilization of resources.</h6>
+    </div>
+</body>
 {% endblock content %}

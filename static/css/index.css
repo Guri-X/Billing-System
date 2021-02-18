@@ -1,0 +1,27 @@
+body{
+    background: #a3ddcb;
+}
+
+.Banner{	
+	position: relative;	
+	background: #03506f;
+	margin: 140px 160px 150px 300px;
+	width: 50%;
+	height: 50%;
+	color: #ffffff;
+	padding: 30px 30px 50px 30px;
+	border-radius: 8px;
+}
+
+.View-Button{
+    position: absolute;
+    background: #09394c;
+	border: none;
+	border-radius: 8px;
+	color: #ffffff;
+	padding: 15px 8px 15px 8px;
+	width: 20%;
+	text-align: center;
+	top: 180px;
+	right: 100px;
+}

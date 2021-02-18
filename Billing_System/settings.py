@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRS = [
+    "/home/xan0er/Django/static",
+]
 
 # Application definition
 
@@ -39,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Index.apps.IndexConfig',
+    'Contact.apps.ContactConfig',
+    'Login.apps.LoginConfig'
 ]
 
 MIDDLEWARE = [
@@ -120,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+DEFAULT_FROM_EMAIL = 'singhhh890.gs@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
