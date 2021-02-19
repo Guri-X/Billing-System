@@ -1,0 +1,24 @@
+{% extends 'session_heading.html' %}
+{% load static %}
+
+{% block content %}
+<!doctype html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/session.css' %}">	
+	<title>
+			Dashboard | Online Billing System
+    </title>
+</head>
+<body>
+    <div class="list">
+		<form action="#">
+				<h3>Online Billing System Dashboard</h3><br>
+				<button class="btn button" type="submit" formaction="#">Add Product</button><br>
+				<button class="btn button" type="submit" formaction="#">Add Product Sales</button><br>  
+				<button class="btn button" type="submit" formaction="#">Add Product Details</button><br> 
+				<button class="btn button" type="submit" formaction="#">Product Sales Details</button><br> 
+				<button class="btn button" type="submit" formaction="#">Change Password</button><br> 
+				<button class="btn button" type="submit" formaction="{% url 'Home' %}">Logout</button> 
+		</form>
+</body>
+{% endblock content %}

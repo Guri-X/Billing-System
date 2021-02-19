@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Index.apps.IndexConfig',
     'Contact.apps.ContactConfig',
-    'Login.apps.LoginConfig'
+    'Login.apps.LoginConfig',
+    'Dashboard.apps.DashboardConfig',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_FROM_EMAIL = 'singhhh890.gs@gmail.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGIN_REDIRECT_URL = 'Session'
+#LOGOUT_REDIRECT_URL = 'Home'

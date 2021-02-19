@@ -1,0 +1,22 @@
+{% extends 'session_heading.html' %}
+{% load static %}
+
+{% block content %}
+<!doctype html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/session.css' %}">	
+	<title>
+			Login | Online Billing System
+    </title>
+</head>
+<body>
+    <div class="Banner">
+		<u>{% if user.is_authenticated %}<h1>Hello, {{ user.username}}.</h1></u><br><h4>Welcome to the Online Billing System.</h4>{% endif %}
+		<h4>Click on the below button or click on "Dashboard" on the top to visit your dashboard.</h4>
+		<form action="#">
+				<button class="View-Button" type="submit" formaction="{% url 'Dashboard' %}">Dashboard ➤➤</button>
+		</form>
+
+	</div>
+</body>
+{% endblock content %}
