@@ -4,3 +4,6 @@ from django.views.generic import TemplateView
 
 class DashboardView(TemplateView):
     template_name = 'dashboard.html'
+
+class AddProductView(TemplateView):
+    template_name = 'addproduct.html'
