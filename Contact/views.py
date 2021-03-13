@@ -1,28 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
 from django.http import HttpResponse
-from django.views.decorators.csrf import ensure_csrf_cookie, csrf_exempt
-from .models import Contact
+from .models import ContactForm
+from django.urls import reverse_lazy
 
-@csrf_exempt
-def contactPage(request):
-    if request.method == "POST":
-        contact = Contact()
-        username = request.POST.get('username')
-        useremail = request.POST.get('email')
-        usercontact = request.POST.get('contact')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
-        contact.User_Name = username
-        contact.from_email = useremail
-        contact.User_Contact = usercontact
-        contact.subject = subject
-        contact.message = message
-        contact.save()
-        return HttpResponse("<h1>Thank you for contacting us.</h1>")
-
-    return render(request, 'contact.html')
-
-def successPage(TemplateView):
-    template_name = 'success.html'
-
+class ContactPage(CreateView):
+    template_name = 'contact.html'
+    model = ContactForm
+    fields = '__all__'
+    success_url = reverse_lazy('Success')

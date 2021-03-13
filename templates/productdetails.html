@@ -1,0 +1,40 @@
+{% extends 'session_heading.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details | Online Billing System</title>
+</head>
+<body>
+    <div class="Banner">
+		<center><h1>Product Details</h1><br></center>
+		<table class="table">
+		  <thread>
+		    <tr>
+		      <th style="text-align: center; vertical-align: middle;" scope="col">Sr. No.</th>
+		      <th style="text-align: center; vertical-align: middle;" scope="col">Name</th>
+		      <th style="text-align: center; vertical-align: middle;" scope="col">Company</th>
+              <th style="text-align: center; vertical-align: middle;" scope="col">Type</th>
+              <th style="text-align: center; vertical-align: middle;" scope="col">Cost</th>
+              <th style="text-align: center; vertical-align: middle;" scope="col">Action</th>
+		    </tr>
+		  </thread>
+		  {% for fields in product %}
+		  <tbody>
+		    <tr>
+		      <th style="text-align: center; vertical-align: middle;" scope="row">{{ fields.id }}</th>
+			  <th style="text-align: center; vertical-align: middle;"scope="row">{{ fields.product_name }}</th>
+			  <th style="text-align: center; vertical-align: middle;" scope="row">{{ fields.product_company }}</th>
+			  <th style="text-align: center; vertical-align: middle;" scope="row">{{ fields.product_type }}</th>
+		      <th style="text-align: center; vertical-align: middle;" scope="row">{{ fields.product_cost }}</th>
+			  <th style="text-align: center; vertical-align: middle;" scope="row"><a class="prodlinks" href="{% url 'Edit_Details' fields.id%}">Edit</a> | <a class="prodlinks" href="{% url 'Delete_Details' fields.id%}">Delete</a></th>
+		    </tr>
+		  </tbody>
+		  {% endfor %}
+		</table>
+	</div>
+</body>
+</html>
+{% endblock content %}
+

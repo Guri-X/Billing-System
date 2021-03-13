@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Contact.apps.ContactConfig',
     'Login.apps.LoginConfig',
     'Dashboard.apps.DashboardConfig',
+    'Sales.apps.SalesConfig',
 ]
 
 MIDDLEWARE = [

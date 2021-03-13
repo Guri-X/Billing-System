@@ -1,19 +1,42 @@
 {% extends 'session_heading.html' %}
-{% load static %}
 
 {% block content %}
-<!doctype html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/session.css' %}">	
-	<title>
-			Dashboard | Online Billing System
-    </title>
+    <meta charset="UTF-8">
+    <title>Add Product | Online Billing System</title>
+	<script type="text/javascript">
+			$(document).ready(function(){
+					$('#prodbtn').click(function() {
+							$('#prodAlert').show('fade');
+
+						    setTimeout(function() {
+								$('#prodAlert').hide('fade');
+							}, 3000);
+					});
+			});
+	</script>
 </head>
 <body>
-    <div class="list">
-		<form action="#">
-				<h3>Add/Edit the Product</h3><br>
-				<button class="btn button" type="submit" formaction="#">Submit</button><br>
-		</form>
+    <div class="Banner">
+    <center><h1>Add Product Details</h1></center><br>
+    <form method="POST" action="">
+    <center>
+    <table>
+    <div class="form-group">
+    {% csrf_token %}
+    {{ form.as_table }}
+	</div>
+    </table>
+    </center>
+	<br>
+	<center><button id="prodbtn" type="submit" class="btn btn-primary">Add Product</button></center><br>
+	<center><div id="prodAlert" class="alert alert-primary collapse" role="alert">
+		Product is successfully added
+    </div></center>
+	</div>
+</form>
 </body>
+</html>
 {% endblock content %}
+

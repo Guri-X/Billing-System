@@ -1,0 +1,63 @@
+{% extends 'session_heading.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product | Online Billing System</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		function myFunction() {
+				var x = document.getElementById("salesDIV");
+				if (x.style.display === "none") {
+				x.style.display = "block";
+		} else {
+				x.style.display = "none";
+		}
+		}
+        $(document).ready(function(){                                                                                                        
+                $("button").click(function() {                                                                                               
+                        $('html, body').animate({                                                                                            
+								scrollTop: $(".scrollbtn").offset().top                                                                         
+                                }, 2000);                                                                                                    
+                });                                                                                                                          
+        });
+		$(document).ready(function(){
+                    $('#prodbtn').click(function() {
+                            $('#prodAlert').show('fade');
+ 
+                            setTimeout(function() {
+                                $('#prodAlert').hide('fade');
+                            }, 16000);
+                    });
+        });
+    </script>
+</head>
+<body>
+    <div class="Banner">
+    <center><h1>Enter Customer Details:</h1></center><br>
+    <form method="POST" action="">
+    <center>
+    <table>
+    <div class="form-group">
+    {% csrf_token %}
+    {{ form.as_table }}
+	</div>
+    </table>
+    </center>
+	<br>
+	<center><button id="prodbtn" type="submit" class="btn btn-primary">Add Customer</button></center><br>
+    <center><div id="prodAlert" class="alert alert-primary collapse" role="alert">
+        Customer details are successfully added
+    </div></center>
+	</form><br>
+    <center><button type="button" class="btn btn-primary scrollbtn" onclick="myFunction()">Click here to proceed</button><center>
+	</form>
+	</div>
+		<div style="display: none;" id="salesDIV" class="Banner">
+		<h5>Choose product:</h5>
+    </div>
+</body>
+</html>
+{% endblock content %}
+

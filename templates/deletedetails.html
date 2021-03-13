@@ -1,0 +1,52 @@
+{% extends 'session_heading.html' %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product | Online Billing System</title>
+	<style>
+		#prodbtn{
+				position: relative;
+				top: -225px;
+				right: 30px;
+}
+	</style>
+</head>
+<body>
+    <div class="Banner">
+    <center><h1>Delete Product Details</h1></center><br>
+    <form method="POST" action="">
+    <center>
+    <table>
+    <div class="form-group">
+    {% csrf_token %}
+	<h5>Are you sure you want to delete the <b>"{{ object.product_name }}"</b>?</h5><br>
+	<h6>Details:</h6>
+    <table class="table">
+		<thread>
+		  <tr>
+		      <th style="text-align: center; vertical-align: middle;" scope="col">Name</th>
+		      <th style="text-align: center; vertical-align: middle;" scope="col">Company</th>
+              <th style="text-align: center; vertical-align: middle;" scope="col">Type</th>
+              <th style="text-align: center; vertical-align: middle;" scope="col">Cost</th>
+		  </tr>
+		</thread>
+		<tbody>
+		  <tr>
+			<th style="text-align: center; vertical-align: middle;" scope="row">{{ object.product_name }}</th>
+			<th style="text-align: center; vertical-align: middle;" scope="row">{{ object.product_company }}</th>
+			<th style="text-align: center; vertical-align: middle;" scope="row">{{ object.product_type }}</th>
+			<th style="text-align: center; vertical-align: middle;" scope="row">{{ object.product_cost }}</th>
+		  </tr>
+		</tbody>
+    </table>
+	</div>
+    </center>
+	<center><button id="prodbtn" type="submit" class="btn btn-primary">Delete Details</button></center><br>
+	</div>
+</form>
+</body>
+</html>
+{% endblock content %}
+

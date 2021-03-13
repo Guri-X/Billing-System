@@ -2,14 +2,19 @@ body{
     background: #a3ddcb;
 }
 
+.prodlinks{
+    color: white;
+	text-decoration: none;
+}
+
 .Banner{	
 	position: relative;	
 	background: #03506f;
-	margin: 140px 160px 150px 300px;
+	margin: 140px 260px 150px 300px;
 	width: 50%;
 	height: 50%;
 	color: #ffffff;
-	padding: 30px 30px 80px 30px;
+	padding: 30px 30px 100px 30px;
 	border-radius: 8px;
 }
 
@@ -63,4 +68,38 @@ a:active{
 .dropdown:hover .dropdown-menu {
     display: block;
 	margin: 0;
+}
+
+.Product-table{
+    position: relative; 
+    background: #03506f;
+    margin: 140px 260px 150px 300px;
+    width: 50%;
+    height: 50%;
+    color: #ffffff;
+    padding: 30px 30px 50px 30px;
+    border-radius: 8px;
+}
+
+
+
+#prodAlert{
+    position:fixed;
+    top: 10px;
+	left: 50px;
+}
+
+th{
+    text-align: center;
+	vertical-align: middle;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffe3de;
+  color: black;
+  text-align: center;
 }

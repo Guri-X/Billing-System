@@ -1,12 +1,12 @@
 from django.db import models
 
-class Contact(models.Model):
-    User_Name = models.CharField(max_length=200)
-    from_email = models.EmailField()
-    User_Contact = models.IntegerField()
+class ContactForm(models.Model):
+    user_name = models.CharField(max_length=200)
+    user_email = models.CharField(max_length=200)
+    user_contact = models.CharField(max_length=10)
     subject = models.CharField(max_length=200)
-    message = models.TextField()
+    message = models.TextField(max_length=400)
     
     def __str__(self):
-        return self.name
+        return self.subject
 

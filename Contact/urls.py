@@ -3,6 +3,5 @@ from django.contrib import admin
 from .views import *
 
 urlpatterns = [
-    path('contact/', contactPage, name='Contact'),
-    path('success/', successPage, name='Success'),
+    path('contact/', ContactPage.as_view(), name='Contact'),
 ]
