@@ -1,0 +1,22 @@
+{% extends 'heading.html' %}
+{% load static %}
+
+{% block content %}
+<!doctype html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">	
+	<title>
+			Register | Online Billing System
+    </title>
+</head>
+<body>
+    <div class="Banner">
+		<u><h1>Register or Create your Account</h1></u><br>
+		<form method="post">
+		    {% csrf_token %}
+		    {{ form.as_p }}
+			<button type="submit">Register</button>
+		</form>
+    </div>
+</body>
+{% endblock content %}

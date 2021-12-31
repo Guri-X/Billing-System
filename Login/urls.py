@@ -6,4 +6,5 @@ from .views import *
 urlpatterns = [
     path('accounts/login/', LoginPage.as_view(), name='Login'),
     path('account/', login_required(SessionPage.as_view()), name='Session'),
+    path('register/', register, name="Register")
 ]
