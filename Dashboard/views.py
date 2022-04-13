@@ -36,3 +36,6 @@ def product_details_view(request):
 def logoutHandle(request):
     logout(request)
     return redirect('/')
+
+def change_password(request):
+    return render(request, "change_password.html")

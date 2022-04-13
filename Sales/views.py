@@ -1,4 +1,5 @@
 import datetime
+import enum
 from unicodedata import name
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, FormView
@@ -23,7 +24,7 @@ class AddSalesView(CreateView):
 class SalesDetailsView(TemplateView):
     template_name = 'salesdetails.html'
 
-def create_sales_report(customer, products, company_name, company_address, company_phone_number, company_email_address):
+def create_sales_report(customer, products, company_name, company_address, company_phone_number, company_email_address, prod_quantity):
      customer_details = AddCustomer.objects.get(customer_name=customer)
      product_details = []
      for i in products:
@@ -53,11 +54,14 @@ def create_sales_report(customer, products, company_name, company_address, compa
      p.drawString(15, 500, "Product Details")
      p.line(15, 497, 97, 497)
 
-     data = [("Product Name", "Product Type", "Product Cost")]
-     for prod in product_details:
-          temp_data = (prod.product_name, prod.product_type, prod.product_cost)
+     data = [("Product Name", "Product Type", "Product Cost", "Product Quantity", "Total Amount")]
+     for index,prod in enumerate(product_details):
+          qty = prod_quantity[index]
+          cost = prod.product_cost
+          total = int(qty) * float(cost)
+          temp_data = (prod.product_name, prod.product_type, cost, qty, total)
           data.append(temp_data)
-     prod_table = Table(data)
+     prod_table = Table(data, colWidths=[150, 150, 80, 90, 80])
      prod_table.setStyle(TableStyle([
           ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
           ('BOX', (0,0), (-1,-1), 0.25, colors.black)
@@ -88,7 +92,11 @@ def generate_sales_report(request):
                company_address = form.cleaned_data.get("company_address")
                company_phone_number = form.cleaned_data.get("company_phone_number")
                company_email_address = form.cleaned_data.get("company_email_address")
-               sales_report = create_sales_report(customer, products, company_name, company_address, company_phone_number, company_email_address)
+               prod_quantity = []
+               for i in products:
+                    temp_quantity = form.cleaned_data.get(i + " quantity")
+                    prod_quantity.append(int(temp_quantity))
+               sales_report = create_sales_report(customer, products, company_name, company_address, company_phone_number, company_email_address, prod_quantity)
                return sales_report
      context['form']=form
      return render(request,'generate_sales_report.html', context)

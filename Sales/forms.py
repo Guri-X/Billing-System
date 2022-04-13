@@ -18,7 +18,10 @@ class ReportForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(ReportForm, self).__init__(*args, **kwargs)
+        product_choices = self.get_product_choices()
         self.fields['products'].choices = self.get_product_choices()
+        for prod in product_choices:
+            self.fields[prod[0] + " quantity"] = forms.CharField(max_length=500)
 
     def get_product_choices(self):
         choices = ((i.product_name, i.product_name) for i in AddProduct.objects.all().order_by('product_name'))
