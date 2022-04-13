@@ -10,13 +10,13 @@
     </title>
 </head>
 <body>
-    <div class="Banner">
+    <center><div class="Banner">
 		<u><h1>Generate Report</h1></u><br>
 		<form method="post">
 		    {% csrf_token %}
-		    {{ form.as_p }}
-			<button type="submit">Create Report</button>
+		    {{ form.as_p }}<br>
+			<button type="submit" class="btn btn-primary">Create Report</button>
 		</form>
-    </div>
+    </div></center>
 </body>
 {% endblock content %}

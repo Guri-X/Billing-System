@@ -10,13 +10,14 @@
     </title>
 </head>
 <body>
+	<center>
     <div class="Banner">
 		<u>{% if user.is_authenticated %}<h1>Hello, {{ user.username}}.</h1></u><br><h4>Welcome to the Online Billing System.</h4>{% endif %}
 		<h4>Click on the below button or click on "Dashboard" on the top to visit your dashboard.</h4>
 		<form action="#">
-				<button class="View-Button" type="submit" formaction="{% url 'Dashboard' %}">Dashboard ➤➤</button>
+			<center><button class="View-Button" type="submit" formaction="{% url 'Dashboard' %}">Dashboard ➤➤</button></center>
 		</form>
-
 	</div>
+	</center>
 </body>
 {% endblock content %}

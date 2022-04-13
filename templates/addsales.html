@@ -34,6 +34,7 @@
     </script>
 </head>
 <body>
+    <center>
     <div class="Banner">
     <center><h1>Enter Customer Details:</h1></center><br>
     <form method="POST" action="">
@@ -51,12 +52,13 @@
         Customer details are successfully added
     </div></center>
 	</form><br>
-    <center><button type="button" class="btn btn-primary scrollbtn" onclick="myFunction()">Click here to proceed</button><center>
+    </center>
+    {% comment %} <center><button type="button" class="btn btn-primary scrollbtn" onclick="myFunction()">Click here to proceed</button><center>
 	</form>
 	</div>
 		<div style="display: none;" id="salesDIV" class="Banner">
 		<h5>Choose product:</h5>
-    </div>
+    </div> {% endcomment %}
 </body>
 </html>
 {% endblock content %}
