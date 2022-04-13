@@ -61,13 +61,15 @@ def create_sales_report(customer, products, company_name, company_address, compa
           total = int(qty) * float(cost)
           temp_data = (prod.product_name, prod.product_type, cost, qty, total)
           data.append(temp_data)
-     prod_table = Table(data, colWidths=[150, 150, 80, 90, 80])
+     prod_table = Table(data, colWidths=[150, 150, 80, 90, 100])
      prod_table.setStyle(TableStyle([
           ('INNERGRID', (0,0), (-1,-1), 0.25, colors.black),
           ('BOX', (0,0), (-1,-1), 0.25, colors.black)
      ]))
      prod_table.wrapOn(p, 100, 100)
      prod_table.drawOn(p, 15, 450)
+
+     p.drawString(495, 430, f"Balance: Rs. {total}")
 
      p.setFillColorRGB(235, 64, 52)
      p.rect(15,15,567,20, stroke=1, fill=1)
